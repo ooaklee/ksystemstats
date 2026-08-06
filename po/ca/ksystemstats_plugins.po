@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksystemstats\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-07-11 17:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -945,127 +945,127 @@ msgctxt "@title"
 msgid "Network Devices"
 msgstr "Dispositius de xarxa"
 
-#: osinfo/osinfo.cpp:108
+#: osinfo/osinfo.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Operating System"
 msgstr "Sistema operatiu"
 
-#: osinfo/osinfo.cpp:110
+#: osinfo/osinfo.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Kernel"
 msgstr "Nucli"
 
-#: osinfo/osinfo.cpp:111
+#: osinfo/osinfo.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Name"
 msgstr "Nom del nucli"
 
-#: osinfo/osinfo.cpp:112
+#: osinfo/osinfo.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Version"
 msgstr "Versió del nucli"
 
-#: osinfo/osinfo.cpp:113
+#: osinfo/osinfo.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Name and Version"
 msgstr "Nom i versió del nucli"
 
-#: osinfo/osinfo.cpp:114
+#: osinfo/osinfo.cpp:116
 #, kde-format
 msgctxt "@title Kernel Name and Version"
 msgid "Kernel"
 msgstr "Nucli"
 
-#: osinfo/osinfo.cpp:116
+#: osinfo/osinfo.cpp:118
 #, kde-format
 msgctxt "@title"
 msgid "System"
 msgstr "Sistema"
 
-#: osinfo/osinfo.cpp:117
+#: osinfo/osinfo.cpp:119
 #, kde-format
 msgctxt "@title"
 msgid "Hostname"
 msgstr "Nom de l'ordinador"
 
-#: osinfo/osinfo.cpp:118
+#: osinfo/osinfo.cpp:120
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Name"
 msgstr "Nom del sistema operatiu"
 
-#: osinfo/osinfo.cpp:119
+#: osinfo/osinfo.cpp:121
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Version"
 msgstr "Versió del sistema operatiu"
 
-#: osinfo/osinfo.cpp:120
+#: osinfo/osinfo.cpp:122
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Name and Version"
 msgstr "Nom i versió del sistema operatiu"
 
-#: osinfo/osinfo.cpp:121
+#: osinfo/osinfo.cpp:123
 #, kde-format
 msgctxt "@title Operating System Name and Version"
 msgid "OS"
 msgstr "SO"
 
-#: osinfo/osinfo.cpp:122
+#: osinfo/osinfo.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Logo"
 msgstr "Logotip del sistema operatiu"
 
-#: osinfo/osinfo.cpp:123
+#: osinfo/osinfo.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Operating System URL"
 msgstr "URL del sistema operatiu"
 
-#: osinfo/osinfo.cpp:124
+#: osinfo/osinfo.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Uptime"
 msgstr "En funcionament"
 
-#: osinfo/osinfo.cpp:127
+#: osinfo/osinfo.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid "KDE Plasma"
 msgstr "Plasma de KDE"
 
-#: osinfo/osinfo.cpp:128
+#: osinfo/osinfo.cpp:130
 #, kde-format
 msgctxt "@title"
 msgid "Qt Version"
 msgstr "Versió de les Qt"
 
-#: osinfo/osinfo.cpp:129
+#: osinfo/osinfo.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid "KDE Frameworks Version"
 msgstr "Versió dels Frameworks de KDE"
 
-#: osinfo/osinfo.cpp:130
+#: osinfo/osinfo.cpp:132
 #, kde-format
 msgctxt "@title"
 msgid "KDE Plasma Version"
 msgstr "Versió del Plasma de KDE"
 
-#: osinfo/osinfo.cpp:131
+#: osinfo/osinfo.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Window System"
 msgstr "Sistema de finestres"
 
-#: osinfo/osinfo.cpp:165
+#: osinfo/osinfo.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "Unknown"

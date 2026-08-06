@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ksystemstats\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-07-09 10:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -937,127 +937,127 @@ msgctxt "@title"
 msgid "Network Devices"
 msgstr "أجهزة الشبكة"
 
-#: osinfo/osinfo.cpp:108
+#: osinfo/osinfo.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Operating System"
 msgstr "نظام التشغيل"
 
-#: osinfo/osinfo.cpp:110
+#: osinfo/osinfo.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Kernel"
 msgstr "النواة"
 
-#: osinfo/osinfo.cpp:111
+#: osinfo/osinfo.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Name"
 msgstr "اسم النواة"
 
-#: osinfo/osinfo.cpp:112
+#: osinfo/osinfo.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Version"
 msgstr "إصدارة النّواة"
 
-#: osinfo/osinfo.cpp:113
+#: osinfo/osinfo.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Kernel Name and Version"
 msgstr "اسم وإصدارة النواة"
 
-#: osinfo/osinfo.cpp:114
+#: osinfo/osinfo.cpp:116
 #, kde-format
 msgctxt "@title Kernel Name and Version"
 msgid "Kernel"
 msgstr "النواة"
 
-#: osinfo/osinfo.cpp:116
+#: osinfo/osinfo.cpp:118
 #, kde-format
 msgctxt "@title"
 msgid "System"
 msgstr "النظام"
 
-#: osinfo/osinfo.cpp:117
+#: osinfo/osinfo.cpp:119
 #, kde-format
 msgctxt "@title"
 msgid "Hostname"
 msgstr "اسم المضيف"
 
-#: osinfo/osinfo.cpp:118
+#: osinfo/osinfo.cpp:120
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Name"
 msgstr "اسم نظام التشغيل"
 
-#: osinfo/osinfo.cpp:119
+#: osinfo/osinfo.cpp:121
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Version"
 msgstr "إصدارة نظام التشغيل"
 
-#: osinfo/osinfo.cpp:120
+#: osinfo/osinfo.cpp:122
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Name and Version"
 msgstr "اسم وإصدارة نظام التشغيل"
 
-#: osinfo/osinfo.cpp:121
+#: osinfo/osinfo.cpp:123
 #, kde-format
 msgctxt "@title Operating System Name and Version"
 msgid "OS"
 msgstr "نظام التشغيل"
 
-#: osinfo/osinfo.cpp:122
+#: osinfo/osinfo.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Operating System Logo"
 msgstr "شعار نظام التشغيل"
 
-#: osinfo/osinfo.cpp:123
+#: osinfo/osinfo.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Operating System URL"
 msgstr "عنوان نظام التشغيل"
 
-#: osinfo/osinfo.cpp:124
+#: osinfo/osinfo.cpp:126
 #, kde-format
 msgctxt "@title"
 msgid "Uptime"
 msgstr "زمن التشغيل"
 
-#: osinfo/osinfo.cpp:127
+#: osinfo/osinfo.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid "KDE Plasma"
 msgstr "سطح مكتب بلازما"
 
-#: osinfo/osinfo.cpp:128
+#: osinfo/osinfo.cpp:130
 #, kde-format
 msgctxt "@title"
 msgid "Qt Version"
 msgstr "إصدار كيوت"
 
-#: osinfo/osinfo.cpp:129
+#: osinfo/osinfo.cpp:131
 #, kde-format
 msgctxt "@title"
 msgid "KDE Frameworks Version"
 msgstr "إصدارة إطار كِيدِي"
 
-#: osinfo/osinfo.cpp:130
+#: osinfo/osinfo.cpp:132
 #, kde-format
 msgctxt "@title"
 msgid "KDE Plasma Version"
 msgstr "إصدارة كِيدِي بلازما"
 
-#: osinfo/osinfo.cpp:131
+#: osinfo/osinfo.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Window System"
 msgstr "النظام النوافذ"
 
-#: osinfo/osinfo.cpp:165
+#: osinfo/osinfo.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "Unknown"
