@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ksystemstats\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2026-07-11 17:07+0200\n"
+"PO-Revision-Date: 2026-08-07 17:32+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -699,7 +699,7 @@ msgstr "Total"
 #, kde-format
 msgctxt "@title"
 msgid "Used Swap Memory"
-msgstr "Memòria compartida usada"
+msgstr "Memòria d'intercanvi usada"
 
 #: memory/backend.cpp:96
 #, kde-format
@@ -717,7 +717,7 @@ msgstr "Percentatge de memòria d'intercanvi usada"
 #, kde-format
 msgctxt "@title"
 msgid "Free Swap Memory"
-msgstr "Memòria compartida lliure"
+msgstr "Memòria d'intercanvi lliure"
 
 #: memory/backend.cpp:105
 #, kde-format
