@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ksysguard\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 02:46+0000\n"
-"PO-Revision-Date: 2026-07-05 16:36+0200\n"
+"PO-Revision-Date: 2026-08-07 23:12+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1135,7 +1135,7 @@ msgstr "Minnetrykk"
 #, kde-format
 msgctxt "@title"
 msgid "Some (10 second average)"
-msgstr ""
+msgstr "Nokre (10 sekunds gjennomsnitt)"
 
 #: pressure/pressure.cpp:138
 #, kde-format
@@ -1144,13 +1144,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "memory resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på minne­"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:140 pressure/pressure.cpp:168
 #: pressure/pressure.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid "Some (1 minute average)"
-msgstr ""
+msgstr "Nokre (10 minutts gjennomsnitt)"
 
 #: pressure/pressure.cpp:141
 #, kde-format
@@ -1159,13 +1161,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "memory resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på minne­"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:143 pressure/pressure.cpp:171
 #: pressure/pressure.cpp:201
 #, kde-format
 msgctxt "@title"
 msgid "Some (5 minute average)"
-msgstr ""
+msgstr "Nokre (5 minutts gjennomsnitt)"
 
 #: pressure/pressure.cpp:144
 #, kde-format
@@ -1174,13 +1178,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "memory resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på minne­"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:146 pressure/pressure.cpp:174
 #: pressure/pressure.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid "Total Some Stall Time"
-msgstr ""
+msgstr "Totalt «nokre stagga»-tid"
 
 #: pressure/pressure.cpp:147
 #, kde-format
@@ -1189,13 +1195,15 @@ msgid ""
 "Amount of time that at least one task is stalled waiting for available "
 "memory resources, measured in microseconds"
 msgstr ""
+"Kor lenge minst éi oppgåve er stagga fordi ho ventar på minne­ressursar, målt "
+"i millisekund"
 
 #: pressure/pressure.cpp:150 pressure/pressure.cpp:179
 #: pressure/pressure.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid "Full (10 second average)"
-msgstr ""
+msgstr "Fullt (10 sekunds gjennomsnitt)"
 
 #: pressure/pressure.cpp:151
 #, kde-format
@@ -1204,13 +1212,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "CPU resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på prosessor­"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:153 pressure/pressure.cpp:182
 #: pressure/pressure.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Full (1 minute average)"
-msgstr ""
+msgstr "Fullt (1 minutts gjennomsnitt)"
 
 #: pressure/pressure.cpp:154
 #, kde-format
@@ -1219,13 +1229,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "CPU resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på prosessor­"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:156 pressure/pressure.cpp:185
 #: pressure/pressure.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid "Full (5 minute average)"
-msgstr ""
+msgstr "Fullt (5 minutts gjennomsnitt)"
 
 #: pressure/pressure.cpp:157
 #, kde-format
@@ -1234,13 +1246,15 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "CPU resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på prosessor­"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:159 pressure/pressure.cpp:188
 #: pressure/pressure.cpp:218
 #, kde-format
 msgctxt "@title"
 msgid "Total Full Stall Time"
-msgstr ""
+msgstr "Totalt «fullt stagga»-tid"
 
 #: pressure/pressure.cpp:160
 #, kde-format
@@ -1249,12 +1263,14 @@ msgid ""
 "Amount of time that at least one task is stalled waiting for available CPU "
 "resources, measured in microseconds"
 msgstr ""
+"Kor lenge minst éi oppgåve er stagga fordi ho ventar på prosessor­ressursar, "
+"målt i millisekund"
 
 #: pressure/pressure.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "CPU Pressure"
-msgstr ""
+msgstr "Prosessor­trykk"
 
 #: pressure/pressure.cpp:166
 #, kde-format
@@ -1263,6 +1279,8 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "IO resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på inn/ut-"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:169
 #, kde-format
@@ -1271,6 +1289,8 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "IO resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på inn/ut-"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:172
 #, kde-format
@@ -1279,6 +1299,8 @@ msgid ""
 "Percentage of time that at least one task is stalled waiting for available "
 "IO resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der minst éi oppgåve er stagga fordi ho ventar på inn/ut-"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:175
 #, kde-format
@@ -1287,6 +1309,8 @@ msgid ""
 "Amount of time that at least one task is stalled waiting for available IO "
 "resources, measured in microseconds"
 msgstr ""
+"Kor lenge minst éi oppgåve er stagga fordi ho ventar på inn/ut-ressursar, "
+"målt i millisekund"
 
 #: pressure/pressure.cpp:180
 #, kde-format
@@ -1295,6 +1319,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available memory "
 "resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på minne­"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:183
 #, kde-format
@@ -1303,6 +1329,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available memory "
 "resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på minne­"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:186
 #, kde-format
@@ -1311,6 +1339,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available memory "
 "resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på minne­"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:189
 #, kde-format
@@ -1319,12 +1349,14 @@ msgid ""
 "Amount of time that all tasks are stalled waiting for available memory "
 "resources, measured in microseconds"
 msgstr ""
+"Kor lenge alle oppgåvene er stagga fordi dei ventar på minne­ressursar, målt "
+"i millisekund"
 
 #: pressure/pressure.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "IO Pressure"
-msgstr ""
+msgstr "Inn/ut-trykk"
 
 #: pressure/pressure.cpp:196
 #, kde-format
@@ -1333,6 +1365,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available CPU "
 "resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på prosessor­"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:199
 #, kde-format
@@ -1341,6 +1375,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available CPU "
 "resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på prosessor­"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:202
 #, kde-format
@@ -1349,6 +1385,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available CPU "
 "resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på prosessor­"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:205
 #, kde-format
@@ -1357,6 +1395,8 @@ msgid ""
 "Amount of time that all tasks are stalled waiting for available CPU "
 "resources, measured in microseconds"
 msgstr ""
+"Kor lenge alle oppgåvene er stagga fordi dei ventar på prosessor­ressursar, "
+"målt i millisekund"
 
 #: pressure/pressure.cpp:210
 #, kde-format
@@ -1365,6 +1405,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available IO "
 "resources, averaged over 10 seconds"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på inn/ut-"
+"ressursar (gjennomsnitt over 10 sekund)"
 
 #: pressure/pressure.cpp:213
 #, kde-format
@@ -1373,6 +1415,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available IO "
 "resources, averaged over 1 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på inn/ut-"
+"ressursar (gjennomsnitt over 1 minutt)"
 
 #: pressure/pressure.cpp:216
 #, kde-format
@@ -1381,6 +1425,8 @@ msgid ""
 "Percentage of time that all tasks are stalled waiting for available IO "
 "resources, averaged over 5 minutes"
 msgstr ""
+"Prosent av tida der alle oppgåvene er stagga fordi dei ventar på inn/ut-"
+"ressursar (gjennomsnitt over 5 minutt)"
 
 #: pressure/pressure.cpp:219
 #, kde-format
@@ -1389,3 +1435,5 @@ msgid ""
 "Amount of time that all tasks are stalled waiting for available IO "
 "resources, measured in microseconds"
 msgstr ""
+"Kor lenge alle oppgåvene er stagga fordi dei ventar på inn/ut-ressursar, "
+"målt i millisekund"
