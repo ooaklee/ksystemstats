@@ -112,7 +112,7 @@ std::filesystem::path deviceDirectory(std::string_view pciId)
     }
     std::string pciSuffix(pciId);
     std::replace(pciSuffix.begin(), pciSuffix.end(), ':', '_');
-    return dirPrefix + pciSuffix;
+    return std::string(dirPrefix) + "_" + pciSuffix;
 }
 
 int main(int argc, char **argv)
