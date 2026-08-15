@@ -460,12 +460,10 @@ msgid "Used"
 msgstr "Využité"
 
 #: gpu/AllGpus.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Allocated Memory Percentage"
+#, kde-format
 msgctxt "@title"
 msgid "All GPUs Used Memory Percentage"
-msgstr "Percento pridelenej pamäte"
+msgstr "Percento využitej pamäte všetkých GPU"
 
 #: gpu/GpuDevice.cpp:26
 #, kde-format
@@ -498,12 +496,10 @@ msgid "Used"
 msgstr "Využité"
 
 #: gpu/GpuDevice.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Video Memory Used"
+#, kde-format
 msgctxt "@title"
 msgid "Video Memory Used Percentage"
-msgstr "Využitie video pamäte"
+msgstr "Percento využitia video pamäte"
 
 #: gpu/GpuDevice.cpp:47
 #, kde-format
