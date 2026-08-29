@@ -12,7 +12,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     include(CheckIncludeFile)
     check_include_file("drm/xe_drm.h" HAVE_XE_DRM_H)
 
-    target_sources(ksystemstats_plugin_gpu PRIVATE LinuxAmdGpu.cpp LinuxIntelGpu.cpp LinuxNvidiaGpu.cpp LinuxBackend.cpp NvidiaGpu.cpp NvidiaSmiProcess.cpp)
+    target_sources(ksystemstats_plugin_gpu PRIVATE LinuxAmdGpu.cpp LinuxDrmFdInfo.cpp LinuxIntelGpu.cpp LinuxMsmGpu.cpp LinuxNvidiaGpu.cpp LinuxBackend.cpp NvidiaGpu.cpp NvidiaSmiProcess.cpp)
 
     if(HAVE_XE_DRM_H)
         target_sources(ksystemstats_plugin_gpu PRIVATE LinuxXeGpu.cpp)
