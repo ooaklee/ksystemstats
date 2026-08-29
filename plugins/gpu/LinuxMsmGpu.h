@@ -10,7 +10,10 @@
 #include "LinuxDrmFdInfo.h"
 
 #include <QElapsedTimer>
+#include <QHash>
 #include <QSet>
+
+#include <optional>
 
 struct udev_device;
 
@@ -27,11 +30,14 @@ public:
 private:
     void discoverDeviceNumbers(udev_device *device);
     QString findDevfreqPath(udev_device *device) const;
-    QHash<quint64, quint64> readClientEngineTimes() const;
+    std::optional<LinuxMsmClientSample> readClientEngineTime(const QString &processRoot, const QString &descriptor, bool &valid) const;
+    QHash<quint64, quint64> readClientEngineTimes(bool discover);
     double readFrequencyMhz(const QString &fileName, bool *ok = nullptr) const;
 
     QSet<quint64> m_deviceNumbers;
     QString m_devfreqPath;
+    QHash<QString, QSet<QString>> m_clientDescriptors;
+    QElapsedTimer m_clientDiscoveryTimer;
     LinuxDrmUsageSampler m_usageSampler;
     QElapsedTimer m_usageTimer;
     bool m_usageSubscribed = false;

@@ -19,6 +19,7 @@
 namespace
 {
 constexpr double hertzPerMegahertz = 1'000'000.0;
+constexpr qint64 clientDiscoveryIntervalMilliseconds = 2000;
 
 QString canonicalDevicePath(const QString &drmPath)
 {
@@ -91,6 +92,8 @@ void LinuxMsmGpu::initialize()
 
     connect(m_usageProperty, &KSysGuard::SensorProperty::subscribedChanged, this, [this](bool subscribed) {
         m_usageSubscribed = subscribed;
+        m_clientDescriptors.clear();
+        m_clientDiscoveryTimer.invalidate();
         m_usageSampler.reset();
         m_usageTimer.invalidate();
         if (subscribed) {
@@ -116,7 +119,11 @@ void LinuxMsmGpu::update()
         return;
     }
 
-    const auto engineTimes = readClientEngineTimes();
+    const bool discoverClients = !m_clientDiscoveryTimer.isValid() || m_clientDiscoveryTimer.hasExpired(clientDiscoveryIntervalMilliseconds);
+    const auto engineTimes = readClientEngineTimes(discoverClients);
+    if (discoverClients) {
+        m_clientDiscoveryTimer.start();
+    }
     const qint64 elapsedNanoseconds = m_usageTimer.nsecsElapsed();
     m_usageTimer.restart();
     m_usageProperty->setValue(m_usageSampler.sample(engineTimes, elapsedNanoseconds));
@@ -205,47 +212,87 @@ QString LinuxMsmGpu::findDevfreqPath(udev_device *device) const
     return {};
 }
 
-QHash<quint64, quint64> LinuxMsmGpu::readClientEngineTimes() const
+std::optional<LinuxMsmClientSample> LinuxMsmGpu::readClientEngineTime(const QString &processRoot, const QString &descriptor, bool &valid) const
+{
+    valid = false;
+
+    const QString descriptorPath = processRoot + QStringLiteral("/fd/") + descriptor;
+    struct stat descriptorStat;
+    if (stat(QFile::encodeName(descriptorPath).constData(), &descriptorStat) != 0 || !S_ISCHR(descriptorStat.st_mode)
+        || !m_deviceNumbers.contains(static_cast<quint64>(descriptorStat.st_rdev))) {
+        return std::nullopt;
+    }
+
+    QFile fdInfo(processRoot + QStringLiteral("/fdinfo/") + descriptor);
+    if (!fdInfo.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return std::nullopt;
+    }
+
+    struct stat verifiedDescriptorStat;
+    if (stat(QFile::encodeName(descriptorPath).constData(), &verifiedDescriptorStat) != 0 || descriptorStat.st_rdev != verifiedDescriptorStat.st_rdev
+        || !S_ISCHR(verifiedDescriptorStat.st_mode) || !m_deviceNumbers.contains(static_cast<quint64>(verifiedDescriptorStat.st_rdev))) {
+        return std::nullopt;
+    }
+
+    valid = true;
+    return linuxMsmClientSample(parseLinuxDrmFdInfo(&fdInfo));
+}
+
+QHash<quint64, quint64> LinuxMsmGpu::readClientEngineTimes(bool discover)
 {
     QHash<quint64, quint64> engineTimes;
     const QDir proc(QStringLiteral("/proc"));
-    const auto processDirectories = proc.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::NoSort);
 
     // fdinfo visibility is permission-limited. In an unprivileged user
     // session this therefore represents the visible (normally same-UID)
     // clients, rather than a privileged system-wide accounting source.
-    for (const QString &processName : processDirectories) {
-        bool isPid = false;
-        processName.toUInt(&isPid);
-        if (!isPid) {
-            continue;
+    if (discover) {
+        QHash<QString, QSet<QString>> discoveredDescriptors;
+        const auto processDirectories = proc.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::NoSort);
+        for (const QString &processName : processDirectories) {
+            bool isPid = false;
+            processName.toUInt(&isPid);
+            if (!isPid) {
+                continue;
+            }
+
+            const QString processRoot = proc.filePath(processName);
+            const QDir fdInfoDirectory(processRoot + QStringLiteral("/fdinfo"));
+            const auto descriptors = fdInfoDirectory.entryList(QDir::Files | QDir::System | QDir::NoDotAndDotDot, QDir::NoSort);
+            for (const QString &descriptor : descriptors) {
+                bool valid = false;
+                const auto sample = readClientEngineTime(processRoot, descriptor, valid);
+                if (valid) {
+                    discoveredDescriptors[processName].insert(descriptor);
+                }
+                if (sample) {
+                    mergeLinuxMsmClientSample(engineTimes, *sample);
+                }
+            }
         }
+        m_clientDescriptors = discoveredDescriptors;
+        return engineTimes;
+    }
 
-        const QString processRoot = proc.filePath(processName);
-        const QDir fdInfoDirectory(processRoot + QStringLiteral("/fdinfo"));
-        const auto descriptors = fdInfoDirectory.entryList(QDir::Files | QDir::System | QDir::NoDotAndDotDot, QDir::NoSort);
-
-        for (const QString &descriptor : descriptors) {
-            const QString descriptorPath = processRoot + QStringLiteral("/fd/") + descriptor;
-            struct stat descriptorStat;
-            if (stat(QFile::encodeName(descriptorPath).constData(), &descriptorStat) != 0 || !S_ISCHR(descriptorStat.st_mode)
-                || !m_deviceNumbers.contains(static_cast<quint64>(descriptorStat.st_rdev))) {
-                continue;
+    for (auto process = m_clientDescriptors.begin(); process != m_clientDescriptors.end();) {
+        const QString processRoot = proc.filePath(process.key());
+        auto &descriptors = process.value();
+        for (auto descriptor = descriptors.begin(); descriptor != descriptors.end();) {
+            bool valid = false;
+            const auto sample = readClientEngineTime(processRoot, *descriptor, valid);
+            if (!valid) {
+                descriptor = descriptors.erase(descriptor);
+            } else {
+                ++descriptor;
             }
-
-            QFile fdInfo(fdInfoDirectory.filePath(descriptor));
-            if (!fdInfo.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                continue;
-            }
-
-            struct stat verifiedDescriptorStat;
-            if (stat(QFile::encodeName(descriptorPath).constData(), &verifiedDescriptorStat) != 0 || descriptorStat.st_rdev != verifiedDescriptorStat.st_rdev) {
-                continue;
-            }
-
-            if (const auto sample = linuxMsmClientSample(parseLinuxDrmFdInfo(&fdInfo))) {
+            if (sample) {
                 mergeLinuxMsmClientSample(engineTimes, *sample);
             }
+        }
+        if (descriptors.isEmpty()) {
+            process = m_clientDescriptors.erase(process);
+        } else {
+            ++process;
         }
     }
 
